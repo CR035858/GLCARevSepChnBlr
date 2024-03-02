@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor="aqua">
+	
+<span th:text="'hi '+ ${greetings}"></span>
+<h2 th:text=" ${greetings}"></h2>
+<a th:href="@{login}">Go To Login Page...</a>
+<a th:href="@{/registration/register}"> New users Register.....</a>
+</body>
+</html>

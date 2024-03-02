@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor="aqua">
+	
+	<center>
+		<a th:href="@{/products/addProduct}">Add New Product</a>
+	<table border="2">
+		<tr>
+			<th>ProductId</th>
+			<th>ProductName</th>
+			<th>ProductCategory</th>
+			<th>PriceperUnit</th>
+			<th>QuantityOnHand</th>
+			<th>Action-Update</th>
+			<th>Action-Delete</th>
+		</tr>
+		<tr th:each="product:${products}">
+			<td th:text="${product.productId}"> </td>
+			<td th:text="${product.productName}"> </td>
+			<td th:text="${product.productCategory}"> </td>
+			<td th:text="${product.pricePerUnit}"> </td>
+			<td th:text="${product.quantityOnHand}"> </td>
+			<td>
+				<form th:action="@{/products/showUpdateForm}">
+					<input type="hidden" th:name="prodId" th:value="${product.id}"  />
+					<input type="submit" value="Update"/>
+				</form>
+			</td>
+			<td>
+				<form th:action="@{/products/delete}">
+					<input type="hidden" name="prodId"  th:value="${product.id}"  />
+					<input type="submit" value="Delete"/>
+				</form>
+				
+			</td>
+			
+		</tr>
+		
+		
+	</table>
+	</center>
+</body>
+</html>

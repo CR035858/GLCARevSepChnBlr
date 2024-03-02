@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor="aqua">
+	<center>
+		<h2>Welcome to Products Data Entry Page!!!</h2>
+		<form th:action="@{save}" th:object="${product}">
+			<table border="2">
+				<tr>
+					<th>Product Id : </th>
+					<td><input type="text" th:field="*{productId}" /></td>
+				</tr>
+				<tr>
+					<th>Product Name : </th>
+					<td><input type="text" th:field="*{productName}" /></td>
+				</tr>
+				<tr>
+					<th>Product Category : </th>
+					<td><input type="text" th:field="*{productCategory}" /></td>
+				</tr>
+				<tr>
+					<th>Price Per Unit : </th>
+					<td><input type="text" th:field="*{pricePerUnit}" /></td>
+				</tr>
+				<tr>
+					<th>Quantity On Hand : </th>
+					<td><input type="text" th:field="*{quantityOnHand}" /></td>
+				</tr>
+				<tr>
+					<th> </th>
+					<td><input type="hidden" th:field="*{id}" /></td>
+				</tr>
+				<tr>
+					<th><input type="submit" value="Save Product..." /></th>
+					<td><input type="reset" value="ReSet..." /></td>
+				</tr>
+			</table>
+		</form>
+	</center>
+
+</body>
+</html>
